@@ -1,4 +1,9 @@
 #artist-dir-div {
     font-size: 50px;
     border-style: solid;
+
+}
+
+#artist-dir-div p {
+    text-align: center;
 }
