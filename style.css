@@ -1,9 +1,89 @@
-#artist-dir-div {
-    font-size: 50px;
-    border-style: solid;
-
+body {
+    background-color: white;
 }
 
-#artist-dir-div p {
-    text-align: center;
+#artist-dir-div {
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 75%;
+    /* background-color: red; */
+    /* text-align: center; */
+}
+
+#artist-dir-inner-div h1{
+    margin-left: 10%;
+    color: black;
+    font-size: 35px;
+    font-family: 'Questrial', sans-serif;
+}
+
+#artist-dir-inner-div p {
+    color: black;
+    font-size: 50px;
+}
+
+#artist-search-text-field {
+    /* position: absolute; */
+    height: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    border-radius: 8px;
+    width: 78.1%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    padding-left: 4px;
+    font-family: 'Catamaran', sans-serif;
+}
+
+.artists-div {
+    /* background-color: blue; */
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    margin: 0 auto;
+    margin-top: -2px;
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.artists-div:hover {
+    background-color: lightgray;
+}
+
+.artists-div img {
+    /* margin-left: 20px; */
+    margin-right: 15px;
+}
+
+/* .artists-text-div {
+    background-color: yellow;
+} */
+
+.artist-name {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Questrial', sans-serif;
+    /* margin-top: -8px; */
+    display: block;
+    color: black;
+}
+
+.artist-desc {
+    font-size: 16px;
+    font-family: 'Catamaran', sans-serif;
+    display: block;
+    color: black;
 }
