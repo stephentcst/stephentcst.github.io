@@ -74,9 +74,7 @@ body {
 }
 
 #input-form-div {
-    /* display: none; */
-    display: flex;
-    visibility: hidden;
+    display: none;
     flex-direction: column;
     font-family: 'Catamaran', sans-serif;
 
