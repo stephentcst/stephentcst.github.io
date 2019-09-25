@@ -35,11 +35,17 @@
 
   function toggleForm() {
     var x = document.getElementById("input-form-div");
-    if (x.style.display === "none") {
-      x.style.display = "flex";
+    // if (x.style.display === "none") {
+    //   x.style.display = "flex";
+    // } else {
+    //   x.style.display = "none";
+    // }
+    if (x.style.visibility='visible') {
+      x.style.visibiility='hidden';
     } else {
-      x.style.display = "none";
+      x.style.visibility='visible';
     }
+
   }
 
   // function getInput() {
