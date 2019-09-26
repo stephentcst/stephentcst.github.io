@@ -28,9 +28,14 @@ function addArtist(a) {
   var artistsDiv = document.createElement('div');
   artistsDiv.id = 'artists-div';  
 
-  var artistImage = document.createElement('img');
-  artistImage.setAttribute("src", vals[2]);
-  artistImage.setAttribute("alt", "artist"); 
+  try {
+    var artistImage = document.createElement('img');
+    artistImage.setAttribute("src", vals[2]); 
+  } catch (err) {
+    log("Image not found.")
+  } finally {
+    artistImage.setAttribute("alt", "artist");
+  }
 
   var artistsTextDiv = document.createElement('div');
   artistsTextDiv.id = 'artists-text-div';  
