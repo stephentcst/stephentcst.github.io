@@ -23,7 +23,7 @@ function addArtist(a) {
 
   console.log(vals);
 
-  var body = document.getElementsByTagName('body');  
+  var poop = document.getElementsByTagName('body');  
 
   var artistsDiv = document.createElement('div');
   artistsDiv.id = 'artists-div';  
@@ -43,7 +43,7 @@ function addArtist(a) {
   artistDesc.id = 'artist-desc';
   var artistDescTextNode = document.createTextNode(vals[1]);
 
-  body.appendChild(artistsDiv);
+  poop.appendChild(artistsDiv);
   artistsDiv.appendChild(artistsImage);
   artistsDiv.appendChild(artistsTextDiv);
   artistsTextDiv.appendChild(artistName);
