@@ -11,7 +11,7 @@ function toggleForm(a) {
 
 function getInput(a) {
   var input = document.getElementById(a);  
-  
+
   return [input.elements[0].value
          ,input.elements[1].value
          ,input.elements[2].value
@@ -29,7 +29,7 @@ function addArtist(a) {
   artistsDiv.id = 'artists-div';  
 
   artistImage = document.createElement('img');
-  artistImage.setAttribute("src", vals.elements[2].value);
+  artistImage.setAttribute("src", vals[2]);
   artistImage.setAttribute("alt", "artist"); 
 
   artistsTextDiv = document.createElement('div');
@@ -37,11 +37,11 @@ function addArtist(a) {
 
   artistName = document.createElement('span');
   artistName.id = 'artist-name';
-  var artistNameTextNode = document.createTextNode(vals.elements[0].value);
+  var artistNameTextNode = document.createTextNode(vals[0]);
 
   artistDesc = document.createElement('span');
   artistDesc.id = 'artist-desc';
-  var artistDescTextNode = document.createTextNode(vals.elements[1].value);
+  var artistDescTextNode = document.createTextNode(vals[1]);
 
   body.appendChild(artistsDiv);
   artistsDiv.appendChild(artistsImage);
