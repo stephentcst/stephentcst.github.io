@@ -44,7 +44,7 @@ function addArtist(a) {
   var artistDescTextNode = document.createTextNode(vals[1]);
 
   body.appendChild(artistsDiv);
-  artistsDiv.appendChild(artistsImage);
+  artistsDiv.appendChild(artistImage);
   artistsDiv.appendChild(artistsTextDiv);
   artistsTextDiv.appendChild(artistName);
   artistsTextDiv.appendChild(artistDesc);
