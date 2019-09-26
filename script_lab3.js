@@ -33,14 +33,14 @@ function addArtist(a) {
   artistImage.setAttribute("alt", "artist");
 
   var artistsTextDiv = document.createElement('div');
-  artistsTextDiv.classList('artists-text-div');  
+  artistsTextDiv.classList.add('artists-text-div');  
 
   var artistName = document.createElement('span');
-  artistName.classList('artist-name');
+  artistName.classList.add('artist-name');
   var artistNameTextNode = document.createTextNode(vals[0]);
 
   var artistDesc = document.createElement('span');
-  artistDesc.classList('artist-desc');
+  artistDesc.classList.add('artist-desc');
   var artistDescTextNode = document.createTextNode(vals[1]);
 
   body.appendChild(artistsDiv);
