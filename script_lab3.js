@@ -26,26 +26,21 @@ function addArtist(a) {
   var body = document.getElementsByTagName('body')[0];  
 
   var artistsDiv = document.createElement('div');
-  artistsDiv.id = 'artists-div';  
+  artistsDiv.classList.add('artists-div');  
 
-  try {
-    var artistImage = document.createElement('img');
-    artistImage.setAttribute("src", vals[2]); 
-  } catch (err) {
-    log("Image not found.")
-  } finally {
-    artistImage.setAttribute("alt", "artist");
-  }
+  var artistImage = document.createElement('img');
+//   artistImage.setAttribute("src", vals[2]);   
+  artistImage.setAttribute("alt", "artist");
 
   var artistsTextDiv = document.createElement('div');
-  artistsTextDiv.id = 'artists-text-div';  
+  artistsTextDiv.classList('artists-text-div');  
 
   var artistName = document.createElement('span');
-  artistName.id = 'artist-name';
+  artistName.classList('artist-name');
   var artistNameTextNode = document.createTextNode(vals[0]);
 
   var artistDesc = document.createElement('span');
-  artistDesc.id = 'artist-desc';
+  artistDesc.classList('artist-desc');
   var artistDescTextNode = document.createTextNode(vals[1]);
 
   body.appendChild(artistsDiv);
