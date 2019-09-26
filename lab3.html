@@ -1,10 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
+
     <link rel="stylesheet" type="text/css" href="style_lab3.css">
     <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+
+    <script src="script_lab3.js" defer></script>
+
   </head>
+
   <body>
 
     <div id="artist-dir-div">
@@ -14,7 +19,7 @@
           <form id="art-form">
             <input id="artist-search-text-field" type="text" placeholder="Search..."></input>
           </form>
-          <button id="add-artist-btn" onclick="toggleForm()">Add artist</button>
+          <button id="add-artist-btn" onmouseup="toggleForm()">Add artist</button>
         </div>
       </div>
     </div>
@@ -27,58 +32,23 @@
         <br/>
         <input type="text" placeholder="Image URL"></input>
         <br/>
-        <button id="add-btn">Add</button>
+        <button id="add-btn" onmouseup="addArtist()">Add</button>
       </form>
     </div>
 
-  <script>
+  <!-- function getInput() {
+    var input = document.getElementById("art-form");
 
-  function toggleForm() {
-    var x = document.getElementById("input-form-div");
-    if (x.style.display == "flex") {
-      x.style.display = "none";
-    } else if ( x.style.display == 'none') {
-      x.style.display = 'flex';
-    } else {
-      x.style.display = "flex";
+    var vals;
+
+    var i;
+    for (i = 0; i < input.length; i++) {
+      vals.push(input.elements[i].value);
     }
-    // x.style.display === "none" ? x.style.display = "flex" : x.style.display = "none";
-  }
 
-  // function getInput() {
-  //   var input = document.getElementById("art-form");
-
-  //   var vals;
-
-  //   var i;
-  //   for (i = 0; i < input.length; i++) {
-  //     vals.pop(input.elements[i].value);
-  //   }
-
-  //   return vals;
-  // }
-  
-  // function addArtist() {
-  //   body = document.getElementsByTagName('body')
-  //   newDiv = document.createElement('div');
-  //   newdiv.id = 'artists-div';
-
-  //   var vals = getInput();
-
-  //   var artist_entry = "";
-  //   artist_entry += "<div class=\"artists-div\">"
-  //   artist_entry += "<img src=" + vals.elements[2].value + " alt=\"artist\"></img>"
-  //   artist_entry += "<div class=\"artists-text-div\">"
-  //   artist_entry += "<span class=\"artist-name\">" + vals.elements[0].value + "</span>"
-  //   artist_entry += "<span class=\"artist-desc\">" + vals.elements[1].value + "</span>"
-  //   artist_entry += "</div>"
-  //   artist_entry += "</div>"
-
-  //   return artist_entry;
-
-  //   body.appendChild(newdiv);
-  // }
-  </script>
+    return vals;
+  } -->
 
   </body>
+
 </html>
