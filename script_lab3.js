@@ -11,27 +11,17 @@ function toggleForm(a) {
 
 function getInput(a) {
   var input = document.getElementById(a);  
-  console.log("a: ");
-  console.log(a)
-  console.log("input: ");
-  console.log(input);
-  console.log(input.elements[0].value);
-  var vals;  
-  var i;
-
-//   for (i = 0; i < input.length; i++) {
-//     vals.push(input.elements[i].value);
-//   }
   
-//   console.log(vals.elements[0].value);
-//   console.log(vals.elements[1].value);
-//   console.log(vals.elements[2].value);
-//   console.log(vals);
-//   return vals;
+  return [input.elements[0].value
+         ,input.elements[1].value
+         ,input.elements[2].value
+         ];
 }
 
 function addArtist(a) {
   var vals = getInput(a);
+
+  console.log(vals);
 
   body = document.getElementsByTagName('body');  
 
