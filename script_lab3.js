@@ -23,23 +23,23 @@ function addArtist(a) {
 
   console.log(vals);
 
-  body = document.getElementsByTagName('body');  
+  var body = document.getElementsByTagName('body');  
 
-  artistsDiv = document.createElement('div');
+  var artistsDiv = document.createElement('div');
   artistsDiv.id = 'artists-div';  
 
-  artistImage = document.createElement('img');
+  var artistImage = document.createElement('img');
   artistImage.setAttribute("src", vals[2]);
   artistImage.setAttribute("alt", "artist"); 
 
-  artistsTextDiv = document.createElement('div');
+  var artistsTextDiv = document.createElement('div');
   artistsTextDiv.id = 'artists-text-div';  
 
-  artistName = document.createElement('span');
+  var artistName = document.createElement('span');
   artistName.id = 'artist-name';
   var artistNameTextNode = document.createTextNode(vals[0]);
 
-  artistDesc = document.createElement('span');
+  var artistDesc = document.createElement('span');
   artistDesc.id = 'artist-desc';
   var artistDescTextNode = document.createTextNode(vals[1]);
 
