@@ -11,8 +11,11 @@ function toggleForm(a) {
 
 function getInput(a) {
   var input = document.getElementById(a);  
-  console.log("a: " + a);
-  console.log("input: " + input);
+  console.log("a: ");
+  console.log(a)
+  console.log("input: ");
+  console.log(input);
+  console.log(input.elements[0].value);
   var vals;  
   var i;
 
