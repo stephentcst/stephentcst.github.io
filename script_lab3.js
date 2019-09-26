@@ -17,7 +17,11 @@ function getInput(a) {
   for (i = 0; i < input.length; i++) {
     vals.push(input.elements[i].value);
   }
-
+  
+  console.log(vals.elements[0].value);
+  console.log(vals.elements[1].value);
+  console.log(vals.elements[2].value);
+  console.log(vals);
   return vals;
 }
 
