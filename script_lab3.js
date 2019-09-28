@@ -1,28 +1,48 @@
+// div containing input form
 const inputFormDiv = document.querySelector('#input-form-div');
+
+// input form
 const inputForm = document.querySelector('#input-form');
+
+// div to contain artists
 const master = document.querySelector('#artists-master');
+
+// UNUSED - blank profile image used for testing
 const blankProfile = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
 
+// array to contain artist objects
 var artists = [];
+
+// counter for artist id
 var artistID = 0;
 
+
+//
+// removes all elements from artists div and then appends all artists in artists array
+//
 function displayArtists() {
   var body = document.getElementsByTagName('body')[0];  
   var i;
 
+  // removes all elements
   while (master.firstChild) {
     master.removeChild(master.firstChild);
   }
 
+  // appends all artists in artists array
   for (i = 0; i < artists.length; ++i) {
-    // console.log(artists[i]['id']);
     appendArtist(i);
   }
 }
 
+//
+// toggles whether input form is visible or not
+//
 function toggleForm() {
   if (inputFormDiv.style.display == "flex") {
     inputFormDiv.style.display = "none";
+
+    // clears form
     inputForm.reset();
   } else if ( inputFormDiv.style.display == 'none') {
     inputFormDiv.style.display = 'flex';
@@ -31,6 +51,9 @@ function toggleForm() {
   }
 }
 
+//
+// pushes artist object to artists array
+//
 function pushArtist() {
   var input = document.querySelector('#input-form');  
   var artistObj = {
@@ -40,16 +63,29 @@ function pushArtist() {
                    url: input.elements[2].value
                   };
   artists.push(artistObj);
+  
+  // redisplay artists after new artist is added
   displayArtists();
+
   inputFormDiv.style.display = "none";
+
+  // clears form
   inputForm.reset();
 }
 
+//
+// removes artist object from artists array
+//
 function deleteArtist(index) {
   artists.splice(index, 1);
+
+  // redisplays artists after artist is removed
   displayArtists();
 }
 
+//
+// appends artist to artists-master div
+//
 function appendArtist(index) {
   var artistDiv = document.createElement('div');
   var artistImage = document.createElement('img');
