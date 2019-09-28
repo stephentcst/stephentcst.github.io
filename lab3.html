@@ -19,21 +19,31 @@
           <form id="art-form">
             <input id="artist-search-text-field" type="text" placeholder="Search..."></input>
           </form>
-          <button id="add-artist-btn" onmouseup="toggleForm('input-form-div')">Add artist</button>
+          <button id="add-artist-btn" onmouseup="toggleForm()">Add artist</button>
         </div>
       </div>
     </div>
 
     <div id="input-form-div">
       <form id="input-form">
-        <input type="text" placeholder="Artist name"></input>
+        <input type="text" placeholder="Artist name" maxlength="40"></input>
         <br/>
-        <input type="text" placeholder="About artist"></input>
+        <input type="text" placeholder="About artist" maxlength="40"></input>
         <br/>
         <input type="text" placeholder="Image URL"></input>
         <br/>
-        <button id="add-btn" type="button" onmouseup="addArtist('input-form')">Add</button>
+        <button id="add-btn" type="button" onmouseup="pushArtist()">Add</button>
       </form>
+    </div>
+
+    <div id="artists-master">
+      <!-- <div class="artist">
+        <img src="https://randomuser.me/api/portraits/med/men/44.jpg" alt="artist"></img>
+        <div class="artist-text-div">
+          <span class="artist-name">Douglas Dingus</span>
+          <span class="artist-about">Princevardford University</span>
+        </div>
+      </div> -->
     </div>
 
   </body>

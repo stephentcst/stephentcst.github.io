@@ -1,51 +1,86 @@
-function toggleForm(a) {
-  var x = document.getElementById(a);
-  if (x.style.display == "flex") {
-    x.style.display = "none";
-  } else if ( x.style.display == 'none') {
-    x.style.display = 'flex';
-  } else {
-    x.style.display = "flex";
+const inputFormDiv = document.querySelector('#input-form-div');
+const inputForm = document.querySelector('#input-form');
+const master = document.querySelector('#artists-master');
+const blankProfile = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'
+
+var artists = [];
+var artistID = 0;
+
+function displayArtists() {
+  var body = document.getElementsByTagName('body')[0];  
+  var i;
+
+  while (master.firstChild) {
+    master.removeChild(master.firstChild);
+  }
+
+  for (i = 0; i < artists.length; ++i) {
+    // console.log(artists[i]['id']);
+    appendArtist(i);
   }
 }
 
-function getInput(a) {
-  var input = document.getElementById(a);  
-
-  return [input.elements[0].value
-         ,input.elements[1].value
-         ,input.elements[2].value
-         ];
+function toggleForm() {
+  if (inputFormDiv.style.display == "flex") {
+    inputFormDiv.style.display = "none";
+    inputForm.reset();
+  } else if ( inputFormDiv.style.display == 'none') {
+    inputFormDiv.style.display = 'flex';
+  } else {
+    inputFormDiv.style.display = "flex";
+  }
 }
 
-function addArtist(a) {
-  var vals = getInput(a);
+function pushArtist() {
+  var input = document.querySelector('#input-form');  
+  var artistObj = {
+                   id: artistID++,
+                   name: input.elements[0].value,
+                   about: input.elements[1].value,
+                   url: input.elements[2].value
+                  };
+  artists.push(artistObj);
+  displayArtists();
+  inputFormDiv.style.display = "none";
+  inputForm.reset();
+}
 
-  console.log(vals);
+function deleteArtist(index) {
+  artists.splice(index, 1);
+  displayArtists();
+}
 
-  var body = document.getElementsByTagName('body')[0];  
-
-  var artistsDiv = document.createElement('div');
-  artistsDiv.classList.add('artists-div');  
-
+function appendArtist(index) {
+  var artistDiv = document.createElement('div');
   var artistImage = document.createElement('img');
-//   artistImage.setAttribute("src", vals[2]);   
-  artistImage.setAttribute("alt", "artist");
-
-  var artistsTextDiv = document.createElement('div');
-  artistsTextDiv.classList.add('artists-text-div');  
-
+  var artistTextDiv = document.createElement('div');
   var artistName = document.createElement('span');
+  var artistAbout = document.createElement('span');
+  var deleteBtn = document.createElement('button');
+
+  var nameTextNode = document.createTextNode(artists[index]['name']);
+  var aboutTextNode = document.createTextNode(artists[index]['about']);
+  var deleteBtnTextNode = document.createTextNode('Delete');
+
+  artistDiv.classList.add('artist');
+  artistTextDiv.classList.add('artist-text-div');
   artistName.classList.add('artist-name');
-  var artistNameTextNode = document.createTextNode(vals[0]);
+  artistAbout.classList.add('artist-about');
+  deleteBtn.classList.add('delete-btn');
 
-  var artistDesc = document.createElement('span');
-  artistDesc.classList.add('artist-desc');
-  var artistDescTextNode = document.createTextNode(vals[1]);
+  artistImage.setAttribute('src', artists[index]['url']);
+  artistImage.setAttribute('alt', 'Artist');
+  deleteBtn.setAttribute('type', 'button');
+  deleteBtn.setAttribute('onclick', 'deleteArtist(' + index + ')');
 
-  body.appendChild(artistsDiv);
-  artistsDiv.appendChild(artistImage);
-  artistsDiv.appendChild(artistsTextDiv);
-  artistsTextDiv.appendChild(artistName);
-  artistsTextDiv.appendChild(artistDesc);
+  artistTextDiv.appendChild(artistName);
+  artistTextDiv.appendChild(artistAbout);
+  artistName.appendChild(nameTextNode);
+  artistAbout.appendChild(aboutTextNode);
+  deleteBtn.appendChild(deleteBtnTextNode);
+  artistDiv.appendChild(artistImage);
+  artistDiv.appendChild(artistTextDiv);
+  artistDiv.appendChild(deleteBtn);
+
+  master.appendChild(artistDiv);
 }
