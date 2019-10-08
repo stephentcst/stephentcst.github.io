@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" type="text/css" href="style_lab4.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+
+    <script src="script_lab4.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <div id="artist-dir-div">
+      <div id="artist-dir-inner-div">
+        <h1><b>Artist Directory</b></h1>
+        <div id="form-btn-div">
+          <form id="artist-search-form">
+            <input id="artist-search-text-field" type="text" placeholder="Search..."></input>
+          </form>
+          <button id="search-artist-btn" onmouseup="searchArtists()">Search</button>
+          <button id="add-artist-btn" onmouseup="toggleForm()">Add artist</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="input-form-div">
+      <form id="input-form">
+        <input type="text" placeholder="Artist name" maxlength="40"></input>
+        <br/>
+        <input type="text" placeholder="About artist" maxlength="40"></input>
+        <br/>
+        <input type="text" placeholder="Image URL"></input>
+        <br/>
+        <button id="add-btn" type="button" onmouseup="pushArtist()">Add</button>
+      </form>
+    </div>
+
+     <!-- div to append artists to -->
+    <div id="artists-master"></div>
+
+  </body>
+
+</html>
